@@ -1,0 +1,33 @@
+module tb_vedic_multiplier;
+
+  reg [3:0] A, B;
+  wire [7:0] P;
+
+  vedic_multiplier uut (
+    .A(A),
+    .B(B),
+    .P(P)
+  );
+
+  initial begin
+    // Test 1: A = 3, B = 2
+    A = 4'b0011;
+    B = 4'b0010;
+    #10 $display("Time=%0t A=%b B=%b P=%b", $time, A, B, P);
+
+    // Test 2: A = 5, B = 3
+    A = 4'b0101;
+    B = 4'b0011;
+    #10 $display("Time=%0t A=%b B=%b P=%b", $time, A, B, P);
+
+    // Test 3: A = 7, B = 1
+    A = 4'b0111;
+    B = 4'b0001;
+    #10 $display("Time=%0t A=%b B=%b P=%b", $time, A, B, P);
+
+    // Add more test cases as needed
+
+    $finish;
+  end
+
+endmodule
